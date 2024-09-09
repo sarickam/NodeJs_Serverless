@@ -206,10 +206,6 @@ app.put("/employees", authenticateToken, validateEmployee, async (req, res) => {
 });
 
 
-
-
-
-
 // Route to handle partially updating an employee's data
 app.patch("/employees", authenticateToken, validateEmployee, (req, res) => {
   const updates = req.body;
@@ -264,8 +260,6 @@ app.patch("/employees", authenticateToken, validateEmployee, (req, res) => {
   });
 });
 
-
-
 // Route to handle deleting the authenticated employee
 app.delete("/employees", authenticateToken, (req, res) => {
   const { id } = req.user; // Get employee ID from the token payload
@@ -286,7 +280,6 @@ app.delete("/employees", authenticateToken, (req, res) => {
     res.json({ message: "Employee deleted successfully" });
   });
 });
-
 
 // Route to fetch employee details using authentication token
 app.get("/employees", authenticateToken, (req, res) => {
@@ -312,8 +305,6 @@ app.get("/employees", authenticateToken, (req, res) => {
     res.json(employee);
   });
 });
-
-
 
 // Route to get all employees - this may be restricted based on your needs
 app.get("/all_employees", (req, res) => {
