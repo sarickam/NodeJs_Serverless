@@ -1,0 +1,274 @@
+{
+  "C:\\Users\\Suraj\\Documents\\Node.js\\Serverless": {
+    "versionSfCore": null,
+    "versionFramework": "4.2.5",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeResolverProviders": {
+      "shared-account": {
+        "instance": {
+          "credentials": "<REDACTED>",
+          "serviceConfigFile": {
+            "org": "sarickam",
+            "app": "employee-service",
+            "service": "employee-service",
+            "stages": {
+              "default": {
+                "resolvers": {
+                  "shared-account": {
+                    "type": "aws",
+                    "region": "us-east-1"
+                  }
+                }
+              }
+            },
+            "provider": {
+              "name": "aws",
+              "runtime": "nodejs18.x",
+              "region": "us-east-1",
+              "memorySize": 512,
+              "timeout": 900,
+              "environment": {
+                "DB_HOST": "localhost",
+                "DB_USER": "root",
+                "DB_PASSWORD": "<REDACTED>",
+                "DB_NAME": "expresdb",
+                "JWT_SECRET": "<REDACTED>",
+                "REFRESH_TOKEN_SECRET": "<REDACTED>"
+              },
+              "stage": "dev",
+              "versionFunctions": true
+            },
+            "functions": {
+              "api": {
+                "handler": "handler.app",
+                "events": [
+                  {
+                    "http": {
+                      "path": "/employees",
+                      "method": "post"
+                    }
+                  },
+                  {
+                    "http": {
+                      "path": "/employees",
+                      "method": "put"
+                    }
+                  },
+                  {
+                    "http": {
+                      "path": "/employees",
+                      "method": "patch"
+                    }
+                  },
+                  {
+                    "http": {
+                      "path": "/employees",
+                      "method": "delete"
+                    }
+                  },
+                  {
+                    "http": {
+                      "path": "/employees",
+                      "method": "get"
+                    }
+                  },
+                  {
+                    "http": {
+                      "path": "/all_employees",
+                      "method": "get"
+                    }
+                  },
+                  {
+                    "http": {
+                      "path": "/register",
+                      "method": "post"
+                    }
+                  },
+                  {
+                    "http": {
+                      "path": "/login",
+                      "method": "post"
+                    }
+                  },
+                  {
+                    "http": {
+                      "path": "/refresh-token",
+                      "method": "post"
+                    }
+                  },
+                  {
+                    "http": {
+                      "path": "/logout",
+                      "method": "post"
+                    }
+                  }
+                ]
+              }
+            },
+            "plugins": [
+              "serverless-offline"
+            ]
+          },
+          "configFileDirPath": "C:\\Users\\Suraj\\Documents\\Node.js\\Serverless",
+          "config": {
+            "type": "aws",
+            "region": "us-east-1"
+          },
+          "options": {},
+          "stage": "dev",
+          "dashboard": null,
+          "_credentialsPromise": "<REDACTED>",
+          "isDefaultConfig": false
+        },
+        "resolvers": {}
+      }
+    },
+    "composeServiceName": null,
+    "servicePath": "C:\\Users\\Suraj\\Documents\\Node.js\\Serverless",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "org": "sarickam",
+      "app": "employee-service",
+      "service": "employee-service",
+      "stages": {
+        "default": {
+          "resolvers": {
+            "shared-account": {
+              "type": "aws",
+              "region": "us-east-1"
+            }
+          }
+        }
+      },
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs18.x",
+        "region": "us-east-1",
+        "memorySize": 512,
+        "timeout": 900,
+        "environment": {
+          "DB_HOST": "localhost",
+          "DB_USER": "root",
+          "DB_PASSWORD": "<REDACTED>",
+          "DB_NAME": "expresdb",
+          "JWT_SECRET": "<REDACTED>",
+          "REFRESH_TOKEN_SECRET": "<REDACTED>"
+        },
+        "stage": "dev",
+        "versionFunctions": true
+      },
+      "functions": {
+        "api": {
+          "handler": "handler.app",
+          "events": [
+            {
+              "http": {
+                "path": "/employees",
+                "method": "post"
+              }
+            },
+            {
+              "http": {
+                "path": "/employees",
+                "method": "put"
+              }
+            },
+            {
+              "http": {
+                "path": "/employees",
+                "method": "patch"
+              }
+            },
+            {
+              "http": {
+                "path": "/employees",
+                "method": "delete"
+              }
+            },
+            {
+              "http": {
+                "path": "/employees",
+                "method": "get"
+              }
+            },
+            {
+              "http": {
+                "path": "/all_employees",
+                "method": "get"
+              }
+            },
+            {
+              "http": {
+                "path": "/register",
+                "method": "post"
+              }
+            },
+            {
+              "http": {
+                "path": "/login",
+                "method": "post"
+              }
+            },
+            {
+              "http": {
+                "path": "/refresh-token",
+                "method": "post"
+              }
+            },
+            {
+              "http": {
+                "path": "/logout",
+                "method": "post"
+              }
+            }
+          ]
+        }
+      },
+      "plugins": [
+        "serverless-offline"
+      ]
+    },
+    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\r\norg: sarickam\r\n# \"app\" enables Serverless Framework Dashboard features and sharing them with other Services.\r\napp: employee-service\r\nservice: employee-service\r\n\r\nstages:\r\n  default:\r\n    resolvers:\r\n      shared-account:\r\n        type: aws\r\n        region: us-east-1\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs18.x\r\n  region: us-east-1\r\n  memorySize: 512\r\n  timeout: 900\r\n  environment:\r\n    DB_HOST: localhost\r\n    DB_USER: root\r\n    DB_PASSWORD: root\r\n    DB_NAME: expresdb\r\n    JWT_SECRET: tokenexpress\r\n    REFRESH_TOKEN_SECRET: refreshexpress\r\n\r\nfunctions:\r\n  api:\r\n    handler: handler.app\r\n    events:\r\n      - http:\r\n          path: /employees\r\n          method: post\r\n      - http:\r\n          path: /employees\r\n          method: put\r\n      - http:\r\n          path: /employees\r\n          method: patch\r\n      - http:\r\n          path: /employees\r\n          method: delete\r\n      - http:\r\n          path: /employees\r\n          method: get\r\n      - http:\r\n          path: /all_employees\r\n          method: get\r\n      - http:\r\n          path: /register\r\n          method: post\r\n      - http:\r\n          path: /login\r\n          method: post\r\n      - http:\r\n          path: /refresh-token\r\n          method: post\r\n      - http:\r\n          path: /logout\r\n          method: post\r\n\r\nplugins:\r\n  - serverless-offline\r\n",
+    "command": [
+      "offline",
+      "start\\"
+    ],
+    "options": {},
+    "error": {
+      "message": "Serverless command \"offline start\\\" not found. Did you mean \"offline start\"? Run \"serverless help\" for a list of all available commands.",
+      "code": "UNRECOGNIZED_CLI_COMMAND"
+    },
+    "params": {},
+    "machineId": "6ed7c3c4fffa6a164a35ff59708de629",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "41e467f9-674a-43cc-ada7-e11fbf2ae553",
+    "orgName": "sarickam",
+    "userId": "1bVhV36Wr2p2tt8DzW",
+    "dashboard": {
+      "isEnabledForService": true,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": {
+        "providers": false,
+        "monitoring": false
+      },
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": "v0YXpZ0jzfk7s6xDXR",
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "sarickam",
+    "subscription": null,
+    "userEmail": "kamsaric@gmail.com",
+    "projectType": "framework",
+    "versionSf": "4.2.5",
+    "serviceProviderAwsCfStackName": "employee-service-dev",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}

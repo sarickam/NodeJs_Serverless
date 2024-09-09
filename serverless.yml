@@ -1,0 +1,70 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: sarickam
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: employee-service
+service: employee-service
+
+stages:
+  default:
+    resolvers:
+      shared-account:
+        type: aws
+        region: us-east-1
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  memorySize: 512
+  timeout: 900
+  environment:
+    DB_HOST: localhost
+    DB_USER: root
+    DB_PASSWORD: root
+    DB_NAME: expresdb
+    JWT_SECRET: tokenexpress
+    REFRESH_TOKEN_SECRET: refreshexpress
+
+functions:
+  api:
+    handler: handler.app
+    events:
+      - http:
+          path: /employees
+          method: post
+      - http:
+          path: /employees
+          method: put
+      - http:
+          path: /employees
+          method: patch
+      - http:
+          path: /employees
+          method: delete
+      - http:
+          path: /employees
+          method: get
+      - http:
+          path: /all_employees
+          method: get
+      - http:
+          path: /register
+          method: post
+      - http:
+          path: /login
+          method: post
+      - http:
+          path: /refresh-token
+          method: post
+      - http:
+          path: /logout
+          method: post
+      - http:
+          path: /admin/{id}
+          method: put
+      - http:
+          path: /admin/{id}
+          method: delete
+
+plugins:
+  - serverless-offline
